@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: usuadmin <usuadmin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/09 12:19:30 by usuadmin         ###   ########.fr       */
+/*   Updated: 2024/01/09 10:56:28 by usuadmin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,27 @@
 #include <ctype.h>
 */
 
-int is_ascii(int argument)
+int isdigit(int argument)
     {
-        int	i;
-
-	i = 0;
 	while (argument != '\0')
 	{
-		if ((argument >= 0 && argument <= 127))
+		if ((argument >= '0' && argument <= '9'))
 			
-            return (1);
+            return (2048);
 		else
 			return (0);
 	}
     
     }
-
 /*
-int main(void)
+  int main()
 {
     char c;
-    int result;
+    c='0';
+    printf("Result when numeric character is passed: %d", is_digit(c));
 
-    c = '4';
-    result = is_ascii(c);
-    printf("When %c is passed, return value is %d\n", c, result);
-
-    c = 'l';
-    result = is_ascii(c);
-    printf("When %c is passed, return value is %d\n", c, result);
-
-    c = 'y';
-    result = is_ascii(c);
-    printf("When %c is passed, return value is %d\n", c, result);
-
-    c = '€';
-    result = is_ascii(c);
-    printf("When %c is passed, return value is %d\n", c, result);
+    c='+';
+    printf("\nResult when non-numeric character is passed: %d", is_digit(c));
 
     return 0;
 }
