@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuadmin <usuadmin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/09 12:00:24 by usuadmin         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:53:26 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <ctype.h>
 */
 
-int is_alnum(int argument)
+int ft_isalnum(int argument)
     {
         int	i;
 
@@ -27,7 +27,7 @@ int is_alnum(int argument)
 			|| (argument >= 'A' && argument <= 'Z')
             || (argument >= '0' && argument <= '9'))
 			
-            return (8);
+            return (argument);
 		else
 			return (0);
 	}

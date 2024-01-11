@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuadmin <usuadmin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/09 12:19:30 by usuadmin         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:53:29 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include <ctype.h>
 */
 
-int is_ascii(int argument)
+int ft_isascii(int argument)
     {
         int	i;
 
 	i = 0;
 	while (argument != '\0')
 	{
-		if ((argument >= 0 && argument <= 127))
+		if ((argument >= 0 && argument <= 128))
 			
             return (1);
 		else

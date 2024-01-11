@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuadmin <usuadmin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 18:27:38 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/11 11:52:10 by usuadmin         ###   ########.fr       */
+/*   Created: 2024/01/11 16:19:11 by usuadmin          #+#    #+#             */
+/*   Updated: 2024/01/11 16:53:08 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-void mem_set(char *dest, int c, size_t count)
+void bzero(void *s, __SIZE_TYPE__ n)
 {
-    int i;
-    int count1;
+    __SIZE_TYPE__       i;
+    unsigned char *str;
+    
     i = 0;
-    count1 = count;
+    str = (unsigned *)s;
 
-    while (dest[i] != '\0')
+    while (i < n)
     {
-        while (i <= count1)
-        {
-            dest[i] = c;
-        }
+        str[i] = '\0';
         i++;
     }
     

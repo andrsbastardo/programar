@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuadmin <usuadmin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/09 10:53:22 by usuadmin         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:53:30 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,27 @@
 #include <ctype.h>
 */
 
-int isalpha(int argument)
+int ft_isdigit(int argument)
     {
-        int	i;
-
-	i = 0;
 	while (argument != '\0')
 	{
-		if ((argument >= 'a' && argument <= 'z')
-			|| (argument >= 'A' && argument <= 'Z'))
+		if ((argument >= '0' && argument <= '9'))
 			
-            return (1024);
+            return (argument);
 		else
 			return (0);
 	}
     
     }
 /*
-    int main()
+  int main()
 {
     char c;
-    c = '-';
-    printf("\nResult when uppercase alphabet is passed: %d", is_alpha(c));
-
-    c = 'a';
-    printf("\nResult when lowercase alphabet is passed: %d", is_alpha(c));
+    c='0';
+    printf("Result when numeric character is passed: %d", is_digit(c));
 
     c='+';
-    printf("\nResult when non-alphabetic character is passed: %d", is_alpha(c));
+    printf("\nResult when non-numeric character is passed: %d", is_digit(c));
 
     return 0;
 }
