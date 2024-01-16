@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 18:28:50 by abastard          #+#    #+#             */
-/*   Updated: 2024/01/16 18:30:25 by abastard         ###   ########.fr       */
+/*   Created: 2024/01/16 18:30:20 by abastard          #+#    #+#             */
+/*   Updated: 2024/01/16 18:30:24 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_atoi(char *str)
 {
-	unsigned int	i;
-	int				count;
+	int	a;
+	int	sign;
+	int	aux;
 
-	i = 0;
-	count = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && (i != n))
+	a = 0;
+	sign = 1;
+	aux = 0;
+	while (str[a] == ' ' || (str[a] >= 9 && str[a] <= 13))
+		a++;
+	while (str[a] == '-' || str[a] == '+')
 	{
-		if (s1[i] != s2[i])
-		{
-			count = (s1[i] - s2[i]);
-			return (count);
-		}
-		i++;
+		if (str[a] == '-')
+			sign *= -1;
+		a++;
 	}
-	return (count);
+	while (str[a] >= '0' && str[a] <= '9')
+	{
+		aux = (aux * 10) + (str[a] - '0');
+		a++;
+	}
+	return (aux * sign);
 }
