@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 17:26:22 by abastard          #+#    #+#             */
-/*   Updated: 2024/01/14 10:31:23 by abastard         ###   ########.fr       */
+/*   Created: 2024/01/14 10:31:31 by abastard          #+#    #+#             */
+/*   Updated: 2024/01/14 10:46:11 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memmove(void *dest, const void *src, __SIZE_TYPE__ n)
+char	*ft_strlcpy(char *dest, char *src)
 {
-    int i;
-    i = 0;
-    char *dest2;
-    char *src2;
+	int	i;
 
-    *dest2 = (char *)dest;
-    *src2 = (char *)src;
-
-    while (src2[i] != '\0' && n > 0)
-    {
-        dest2[i]=src2[i];
-        i++;
-        n--;
-    }
+	i = 0;
+	while (src[i] != '\0' )
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

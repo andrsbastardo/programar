@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 17:26:22 by abastard          #+#    #+#             */
-/*   Updated: 2024/01/14 10:31:23 by abastard         ###   ########.fr       */
+/*   Created: 2024/01/15 17:44:00 by abastard          #+#    #+#             */
+/*   Updated: 2024/01/15 17:45:34 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memmove(void *dest, const void *src, __SIZE_TYPE__ n)
+int tolower(int c)
 {
-    int i;
-    i = 0;
-    char *dest2;
-    char *src2;
-
-    *dest2 = (char *)dest;
-    *src2 = (char *)src;
-
-    while (src2[i] != '\0' && n > 0)
+    
+    if (c >= 65 && c <= 90)
     {
-        dest2[i]=src2[i];
-        i++;
-        n--;
+        return(c+32);
     }
+    else
+        return(c);
+    
 }

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 17:26:22 by abastard          #+#    #+#             */
-/*   Updated: 2024/01/14 10:31:23 by abastard         ###   ########.fr       */
+/*   Created: 2024/01/14 10:45:14 by abastard          #+#    #+#             */
+/*   Updated: 2024/01/14 10:46:43 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memmove(void *dest, const void *src, __SIZE_TYPE__ n)
+char	*ft_strlcat(char *dest, char *src)
 {
-    int i;
-    i = 0;
-    char *dest2;
-    char *src2;
+	int	i;
+	int	j;
 
-    *dest2 = (char *)dest;
-    *src2 = (char *)src;
-
-    while (src2[i] != '\0' && n > 0)
-    {
-        dest2[i]=src2[i];
-        i++;
-        n--;
-    }
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
