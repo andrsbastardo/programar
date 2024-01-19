@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 18:30:20 by abastard          #+#    #+#             */
-/*   Updated: 2024/01/19 11:14:03 by abastard         ###   ########.fr       */
+/*   Created: 2024/01/18 16:40:31 by abastard          #+#    #+#             */
+/*   Updated: 2024/01/19 11:18:37 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_atoi(char *str)
+char *strdup(const char *s)
 {
-	int	a;
-	int	sign;
-	int	aux;
+    char *str;
+    char *dest;
+    int i;
 
-	a = 0;
-	sign = 1;
-	aux = 0;
-	while (str[a] == ' ' || (str[a] >= 9 && str[a] <= 13))
-		a++;
-	while (str[a] == '-' || str[a] == '+')
-	{
-		if (str[a] == '-')
-			sign *= -1;
-		a++;
-	}
-	while (str[a] >= '0' && str[a] <= '9')
-	{
-		aux = (aux * 10) + (str[a] - '0');
-		a++;
-	}
-	return (aux * sign);
+    i = 0;
+    *str = (char *)s;
+    *dest = (char *)malloc(ft_strlen(str)+1);
+    while(str[i] != '\0')
+    {
+        dest[i] = str[i];
+        i++;
+    }
+    dest[i+1]='\0';
+    return(dest);
 }
