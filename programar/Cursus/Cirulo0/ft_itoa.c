@@ -6,70 +6,63 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:50:23 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/07 18:20:46 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/11 14:31:13 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		ft_estim(long n)
+static int	ft_estim(int n)
 {
 	__SIZE_TYPE__	estim;
 	int		isneg;
 
 	estim = 0;
 	isneg = 0;
-	if (n < 0)
+	if (n < 0) // Cambia un numero negativo a positivo
 	{
 		estim++;
-		isneg++;
+		isneg++; //Denota que el numero es negativo para la siguiente funcion
 		n = -n;
 	}
-	while (n >= 1)
+
+	while (n >= 1) // Siempre que n es mayor que uno, ca contando 
+	//la longitud del numero
 	{
 		estim++;
 		n /= 10;
 	}
-	return (estim);
+	return (estim); //retorna ambos valores
 }
 
-static char		*ft_gen(char *rtn, long nbr, int len, int isneg)
+static char		*ft_itoa(int n)
 {
-	if (nbr != 0)
-		rtn = malloc(sizeof(char) * (len + 1));
+	char	*rtn;
+	int		estim;
+	int		isneg;
+
+	rtn = 0;
+	estim = ft_estim(n);
+	isneg = ft_estim(n);
+
+	if (n != 0)
+		rtn = malloc(sizeof(char) * (estim + 1));
 	else
 		return (rtn = ft_strdup("0"));
 	if (!rtn)
 		return (0);
-	isneg = 0;
-	if (nbr < 0)
+	if (n < 0) // Cambia un numero negativo a positivo
 	{
-		isneg++;
-		nbr = -nbr;
+		isneg++; //Denota que el numero es negativo para la siguiente funcion
+		n = -n;
 	}
-	rtn[len] = '\0';
-	while (--len)
+	rtn[estim] = '\0';
+	while (--estim)
 	{
-		rtn[len] = (nbr % 10) + '0';
-		nbr /= 10;
+		rtn[estim] = (n % 10) + '0';
+		n /= 10;
 	}
 	if (isneg == 1)
 		rtn[0] = '-';
 	else
-		rtn[0] = (nbr % 10) + '0';
-	return (rtn);
-}
-
-char			*ft_itoa(int n)
-{
-	int		len;
-	char	*rtn;
-	long	nbr;
-	int		isneg;
-
-	nbr = n;
-	len = ft_estim(nbr);
-	rtn = 0;
-	isneg = 0;
-	if (!(rtn = ft_gen(rtn, nbr, len, isneg)))
-		return (0);
+		rtn[0] = (n % 10) + '0';
 	return (rtn);
 }
