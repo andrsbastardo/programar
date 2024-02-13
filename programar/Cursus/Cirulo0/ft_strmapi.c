@@ -6,9 +6,11 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 09:12:05 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/13 10:00:12 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 10:07:51 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
