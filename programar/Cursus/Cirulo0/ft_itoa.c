@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:50:23 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/13 11:41:26 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 14:37:41 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,41 +17,42 @@ static int	ft_len(int n)
 
 	len = 0;
 	isneg = 0;
-	if (n < 0) // Cambia un numero negativo a positivo
+	if (n < 0)
 	{
 		len++;
-		isneg++; //Denota que el numero es negativo para la siguiente funcion
+		isneg++;
 		n = -n;
 	}
-
-	while (n >= 1) // Siempre que n es mayor que uno, ca contando 
-	//la longitud del numero
+	while (n >= 1)
 	{
 		len++;
 		n /= 10;
 	}
-	return (len); //retorna ambos valores
+	return (len);
 }
 
-static char		*ft_itoa(int n)
+char	*rtn(char *rtn, int n, int len)
 {
-	char	*rtn;
-	int		len;
-	int		isneg;
-
-	rtn = 0;
-	isneg = 0;
-	len = ft_len(n);
-
 	if (n != 0)
 		rtn = malloc(sizeof(char) * (len + 1));
 	else
 		return (rtn = ft_strdup("0"));
 	if (!rtn)
 		return (0);
-	if (n < 0) // Cambia un numero negativo a positivo
+}
+
+static char	*ft_itoa(int n)
+{
+	char	*rtn;
+	int		len;
+	int		isneg;
+
+	isneg = 0;
+	len = ft_len(n);
+	rtn = rtn(rtn, n, len);
+	if (n < 0)
 	{
-		isneg++; //Denota que el numero es negativo para la siguiente funcion
+		isneg++;
 		n = -n;
 	}
 	rtn[len] = '\0';

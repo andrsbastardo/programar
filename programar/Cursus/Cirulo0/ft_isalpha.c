@@ -6,31 +6,28 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/11 16:53:27 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:34:55 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 #include <stdio.h>
 #include <ctype.h>
 */
 
-int ft_isalpha(int argument)
+int	ft_isalpha(int argument)
 {
-    int	i;
+	int	i;
 
 	i = 0;
 	while (argument != '\0')
 	{
 		if ((argument >= 'a' && argument <= 'z')
 			|| (argument >= 'A' && argument <= 'Z'))
-			
-            return (argument);
+			return (argument);
 		else
 			return (0);
 	}
-    
 }
 /*
     int main()

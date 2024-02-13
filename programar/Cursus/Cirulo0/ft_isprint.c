@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:32:21 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/11 16:53:31 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 14:02:26 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 #include <stdio.h>
 */
 
-int ft_isprint( int arg )
+int	ft_isprint(int arg)
 {
-    int	i;
+	int	i;
 
-    i = 0;
-    while (arg != '\0')
-    {
-    if (arg >= 33 && arg <= 126)
-        return (16384);
-    else
-        return (0);
-}
+	i = 0;
+	while (arg != '\0')
+	{
+		if (arg >= 33 && arg <= 126)
+			return (16384);
+		else
+			return (0);
+	}
 }
 
 /*

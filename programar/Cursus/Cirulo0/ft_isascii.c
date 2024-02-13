@@ -6,31 +6,28 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/11 16:53:29 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:51:50 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 #include <stdio.h>
 #include <ctype.h>
 */
 
-int ft_isascii(int argument)
-    {
-        int	i;
+int	ft_isascii(int argument)
+{
+	int	i;
 
 	i = 0;
 	while (argument != '\0')
 	{
 		if ((argument >= 0 && argument <= 128))
-			
-            return (1);
+			return (1);
 		else
 			return (0);
 	}
-    
-    }
+}
 
 /*
 int main(void)

@@ -6,33 +6,30 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/11 16:53:26 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:38:54 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /*
 #include <stdio.h>
 #include <ctype.h>
 */
 
-int ft_isalnum(int argument)
-    {
-        int	i;
+int	ft_isalnum(int argument)
+{
+	int	i;
 
 	i = 0;
 	while (argument != '\0')
 	{
 		if ((argument >= 'a' && argument <= 'z')
 			|| (argument >= 'A' && argument <= 'Z')
-            || (argument >= '0' && argument <= '9'))
-			
-            return (argument);
+			|| (argument >= '0' && argument <= '9'))
+			return (argument);
 		else
 			return (0);
 	}
-    
-    }
+}
 
 /*
 int main(void)
