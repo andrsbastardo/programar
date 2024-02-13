@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:57:18 by abastard          #+#    #+#             */
-/*   Updated: 2024/01/16 19:12:21 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:44:23 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void *memchr(const void *s, int c, __SIZE_TYPE__ n)
     {
         if (str[i] == (unsigned char) c)
         {
-            return((void *)&str[i]);
+            return((void *)(s + i));
         }
         else
         {
