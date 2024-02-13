@@ -6,26 +6,26 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:46:13 by abastard          #+#    #+#             */
-/*   Updated: 2024/01/15 18:04:51 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:08:18 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-    int i;
+    unsigned char i;
     char *str;
 
     *str = *s;
-    i = 0;
+    i = (unsigned char) c;
 
-    while (str[i] != '\0')
+    while (*str != '\0' && *str != i)
     {
-        if (str[i] == c)
-        {
-            return((char *)s +i);
-        }
-        i++;
+        str++;
     }
+    if (*str == i)
+        {
+            return(str);
+        }
     return(0);
     
 }

@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:27:38 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/01/11 16:53:32 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:57:47 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void ft_memset(void *dest, int c, __SIZE_TYPE__ count)
         str[i] = c;
         i++;
     }
-        
+    return(dest);
 }
