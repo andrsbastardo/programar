@@ -6,19 +6,12 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:45:14 by abastard          #+#    #+#             */
-<<<<<<< HEAD
 /*   Updated: 2024/02/24 12:53:30 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-=======
-/*   Updated: 2024/01/14 10:46:43 by abastard         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
->>>>>>> 85374f7029757a82142e57fdbaea6db38e307242
 char	*ft_strlcat(char *dest, char *src)
 {
 	int	i;
@@ -26,13 +19,10 @@ char	*ft_strlcat(char *dest, char *src)
 
 	i = 0;
 	j = 0;
-<<<<<<< HEAD
 	if (!src)
 	{
 		return (0);
 	}
-=======
->>>>>>> 85374f7029757a82142e57fdbaea6db38e307242
 	while (dest[i] != '\0')
 	{
 		i++;
@@ -45,8 +35,4 @@ char	*ft_strlcat(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 85374f7029757a82142e57fdbaea6db38e307242

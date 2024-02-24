@@ -6,19 +6,12 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:28:50 by abastard          #+#    #+#             */
-<<<<<<< HEAD
 /*   Updated: 2024/02/24 12:53:46 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-=======
-/*   Updated: 2024/01/16 18:30:25 by abastard         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
->>>>>>> 85374f7029757a82142e57fdbaea6db38e307242
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
@@ -36,8 +29,4 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		i++;
 	}
 	return (count);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 85374f7029757a82142e57fdbaea6db38e307242
