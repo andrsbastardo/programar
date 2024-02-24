@@ -6,7 +6,11 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/02/24 12:52:04 by abastard         ###   ########.fr       */
+=======
+/*   Updated: 2024/02/13 12:51:50 by abastard         ###   ########.fr       */
+>>>>>>> 85374f7029757a82142e57fdbaea6db38e307242
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +19,11 @@
 #include <ctype.h>
 */
 
+<<<<<<< HEAD
 #include "libft.h"
 
+=======
+>>>>>>> 85374f7029757a82142e57fdbaea6db38e307242
 int	ft_isascii(int argument)
 {
 	int	i;

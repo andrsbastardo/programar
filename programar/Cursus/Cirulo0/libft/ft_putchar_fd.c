@@ -6,12 +6,19 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 10:23:31 by abastard          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/02/24 12:52:46 by abastard         ###   ########.fr       */
+=======
+/*   Updated: 2024/02/13 16:16:54 by abastard         ###   ########.fr       */
+>>>>>>> 85374f7029757a82142e57fdbaea6db38e307242
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+<<<<<<< HEAD
 #include "libft.h"
+=======
+>>>>>>> 85374f7029757a82142e57fdbaea6db38e307242
 
 void	ft_putchar_fd(char c, int fd)
 {
