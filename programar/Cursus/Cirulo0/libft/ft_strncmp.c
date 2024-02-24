@@ -6,16 +6,16 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:28:50 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 12:53:46 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:48:21 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
-	int				count;
+	size_t	i;
+	int		count;
 
 	i = 0;
 	count = 0;

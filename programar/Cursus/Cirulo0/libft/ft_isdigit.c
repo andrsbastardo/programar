@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:22:55 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/02/24 12:52:08 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 14:23:13 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@
 
 int	ft_isdigit(int argument)
 {
-	while (argument != '\0')
-	{
-		if ((argument >= '0' && argument <= '9'))
-			return (argument);
-		else
-			return (0);
-	}
+	if ((argument >= '0' && argument <= '9'))
+		return (1);
+	else
+		return (0);
 }
 /*
   int main()

@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:32:21 by usuadmin          #+#    #+#             */
-/*   Updated: 2024/02/24 12:52:12 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 17:56:42 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,21 @@
 
 int	ft_isprint(int arg)
 {
-	int	i;
-
-	i = 0;
-	while (arg != '\0')
-	{
-		if (arg >= 33 && arg <= 126)
-			return (16384);
-		else
-			return (0);
-	}
+	if ((arg >= ' ' && arg <= '~'))
+		return (1);
+	else
+		return (0);
 }
 
 /*
   int main()
 {
-    char c;
-    c='0';
-    printf("Result when numeric character is passed: %d", is_print(c));
+	char	c;
 
-    c= 1;
-    printf("\nResult when non-numeric character is passed: %d", is_print(c));
-
-    return 0;
+	c='0';
+	printf("Result when numeric character is passed: %d", is_print(c));
+	c= 1;
+	printf("\nResult when non-numeric character is passed: %d", is_print(c));
+	return (0);
 }
 */

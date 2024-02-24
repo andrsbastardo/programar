@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:26:22 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 12:52:33 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 15:27:54 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 void	*memmove(void *dest, const void *src, __SIZE_TYPE__ n)
 {
-	int		i;
 	char	*dest2;
 	char	*src2;
+	size_t	i;
 
-	*dest2 = (char *)dest;
-	*src2 = (char *)src;
-	i = 0;
-	if (dest2 == src2)
+	dest2 = (char *)dest;
+	src2 = (char *)src;
+	if (!dest && !src)
 	{
-		return (src2);
+		return (0);
 	}
-	if (dest2 < src2)
+	if (dest > src)
 	{
-		return (ft_memcpy(dest2, src2, n));
+		while (n--)
+			dest2[n] = src2[n];
 	}
-	while (src2[i] != '\0' && n > 0)
+	else
 	{
-		dest2[i] = src2[i];
-		i++;
-		n--;
-		return (dest);
+		i = 0;
+		while (i < n)
+		{
+			dest2[n] = src2[n];
+		}
 	}
+	return (dest);
 }

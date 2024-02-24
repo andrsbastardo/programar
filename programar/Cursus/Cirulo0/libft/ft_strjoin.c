@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:17:25 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 12:53:21 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 17:16:02 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	*src = (char *)s1;
-	*dest = (char *)malloc(ft_strlen(*src) + ft_strlen(*src2) + 1);
-	*src2 = (char *)s2;
+	src = (char *)s1;
+	dest = (char *)malloc(ft_strlen(src) + (ft_strlen(src2) + 1));
+	src2 = (char *)s2;
 	i = 0;
 	j = 0;
 	if (!src || src2)

@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:46:13 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 12:53:10 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:42:31 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	i;
-	char			*str;
+	char			*cpy;
+	unsigned char	ch;
 
-	*str = *s;
-	i = (unsigned char)c;
-	while (*str != '\0' && *str != i)
-	{
-		str++;
-	}
-	if (*str == i)
-	{
-		return (str);
-	}
+	ch = (unsigned char)c;
+	cpy = (char *)s;
+	while ((*cpy != ch) && *cpy)
+		cpy++;
+	if (ch == *cpy)
+		return (cpy);
 	return (0);
 }

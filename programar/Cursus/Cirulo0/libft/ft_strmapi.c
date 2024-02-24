@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 09:12:05 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 12:53:41 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 17:24:49 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
-	*str = malloc(ft_strlen(s) + 1);
+	str = malloc(ft_strlen(s) + 1);
 	if (!str)
 	{
 		return (0);
@@ -29,5 +29,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		str[i] = f(i, s[i]);
 		i++;
 	}
-	return (s);
+	return (str);
 }

@@ -6,15 +6,15 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 12:56:36 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 12:53:37 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 14:31:55 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (!str)

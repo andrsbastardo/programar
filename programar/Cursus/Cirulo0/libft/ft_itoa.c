@@ -6,66 +6,75 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:50:23 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 12:52:18 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/24 17:23:22 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> // For strtol
+*/
 
-static int	ft_len(int n)
+static char	*excepts(int n)
 {
-	__SIZE_TYPE__	len;
-	int				isneg;
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	if (n == INT_MAX)
+		return (ft_strdup("2147483647"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	return (NULL);
+}
+
+static size_t	n_digits(int n)
+{
+	size_t	len;
+	int		cpy;
 
 	len = 0;
-	isneg = 0;
+	cpy = n;
+	if (n == 0)
+		return (1);
+	if (n == INT_MIN || n == INT_MAX)
+		return (11);
 	if (n < 0)
 	{
 		len++;
-		isneg++;
-		n = -n;
+		cpy = -n;
 	}
-	while (n >= 1)
+	while (cpy > 0)
 	{
+		cpy /= 10;
 		len++;
-		n /= 10;
 	}
 	return (len);
 }
 
-char	*rtn(char *rtn, int n, int len)
+char	*ft_itoa(int n)
 {
-	if (n != 0)
-		rtn = malloc(sizeof(char) * (len + 1));
-	else
-		return (rtn = ft_strdup("0"));
-	if (!rtn)
-		return (0);
-}
+	char	*res;
+	size_t	len;
+	size_t	cpy;
 
-static char	*ft_itoa(int n)
-{
-	char	*rtn;
-	int		len;
-	int		isneg;
-
-	isneg = 0;
-	len = ft_len(n);
-	rtn = rtn(rtn, n, len);
+	if (n == 0 || n == INT_MIN || n == INT_MAX)
+		return (excepts(n));
+	cpy = n;
+	len = n_digits(n);
+	res = ft_calloc(sizeof(char), len + 1);
+	if (!res)
+		return (NULL);
 	if (n < 0)
 	{
-		isneg++;
-		n = -n;
+		res[0] = '-';
+		cpy = -n;
 	}
-	rtn[len] = '\0';
-	while (--len)
+	len--;
+	while (cpy > 0)
 	{
-		rtn[len] = (n % 10) + '0';
-		n /= 10;
+		res[len--] = (cpy % 10) + '0';
+		cpy /= 10;
 	}
-	if (isneg == 1)
-		rtn[0] = '-';
-	else
-		rtn[0] = (n % 10) + '0';
-	return (rtn);
+	return (res);
 }
