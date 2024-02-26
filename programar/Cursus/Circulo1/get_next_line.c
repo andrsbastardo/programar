@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 19:01:01 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/19 19:10:34 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/20 11:07:31 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@ static char	*read_fd(int fd, char *buffer, char *prev_line)
 
 	i = 1;
 	while (i)
-	{
-		i = read(fd, buffer, BUFFER_SIZE);
-		if (i == -1)
+	{//Gol
+		i = read(fd, buffer, BUFFER_SIZE); //Read 1 character from the file, and advance a number equal to buffersize
+		if (i == -1) //If not able to read, return null
 			return (NULL);
-		else if (i == 0)
+		else if (i == 0) //If not readeable, stop the program.
 			break ;
-		buffer[i] = '\0';
-		if (!prev_line)
+		buffer[i] = '\0'; //Stop reading, and put and EOF simbol
+		if (!prev_line) //Copy the letter un a *
 			prev_line = ft_strdup("");
-		line = prev_line;
-		prev_line = ft_strjoin(line, buffer);
-		free(line);
-		line = NULL;
-		if (!prev_line)
+		line = prev_line; //Equal line to prev_line
+		prev_line = ft_strjoin(line, buffer); //Junta line y buffer en una sola string
+		free(line); //Libera la memoria de line
+		line = NULL; //Limpia line para el siguiente bucle
+		if (!prev_line) //If prev_line = NUll, return NULL
 			return (NULL);
-		if (ft_strchr(buffer, '\n'))
+		if (ft_strchr(buffer, '\n')) //Si encuentra el caracter de salto de linea, rompe el bucle
 			break ;
 	}
 	return (prev_line);
