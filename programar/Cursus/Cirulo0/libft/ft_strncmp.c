@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:28:50 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 16:48:21 by abastard         ###   ########.fr       */
+/*   Updated: 2024/02/28 20:43:24 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,17 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	count = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && (i != n))
+	while ((s1[i] != '\0' || s2[i] != '\0') && (i < n))
 	{
-		if (s1[i] != s2[i])
+		if (s1[i] > s2[i])
 		{
-			count = (s1[i] - s2[i]);
-			return (count);
+			return(1);
+		}
+		if (s1[i] < s2[i])
+		{
+			return(-1);
 		}
 		i++;
 	}
-	return (count);
+	return (0);
 }
