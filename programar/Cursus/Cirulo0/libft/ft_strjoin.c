@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:17:25 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/02 15:25:23 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:44:49 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*src;
-	char	*src2;
 	char	*dest;
 	int		i;
 	int		j;
 
-	src = (char *)s1;
-	src2 = (char *)s2;
-	dest = (char *)malloc(ft_strlen(src) + (ft_strlen(src2) + 1));
+	if (!s1 || !s2)
+		return (NULL);
+	dest = (char *)malloc(ft_strlen(s1) + (ft_strlen(s2) + 1));
+	if (!dest)
+		return (NULL);
 	i = 0;
 	j = 0;
-	if (!src || src2)
-		return (0);
-	while (s2[i] != '\0')
+	while(s1[i] != '\0')
 	{
-		while (s1[j++] != '\0')
-			dest[j] = s1[j];
-		dest[j + i] = s2[i];
+		dest[i] = s1[i];
 		i++;
 	}
-	dest[j + i + 1] = '\0';
-	if (!*dest)
-		return (0);
-	else
-		return (dest);
+	while(s2[j] != '\0')
+	{
+		dest[i] = s2[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -6,46 +6,40 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:18:18 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 12:53:04 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:23:39 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libft.h"
 
-static char	**free_all(char **res, __SIZE_TYPE__ i)
+static char	**free_all(char **res, size_t i)
 {
 	while (--i)
 		free(res[i]);
-	free(res);
 	return (0);
 }
 
-static __SIZE_TYPE__	string_count(char const *s, char c)
+static size_t	string_count(char const *s, char c)
 {
-	__SIZE_TYPE__	n;
-	__SIZE_TYPE__	flag;
+	size_t	i;
+	size_t	flags;
 
-	n = 0;
-	flag = 0;
-	while (*s)
+	i = 0;
+	flags = 0;
+	while (s[i] != '\0')
 	{
-		if (*s == c)
-			flag = 0;
-		else if (flag == 0)
-		{
-			n++;
-			flag = 1;
-		}
-		s++;
+		if (s[i] == c)
+			flags++;
+		i++;
 	}
-	return (n);
+	return (flags);
 }
 
-static char	**assemble(char **res, char const *s, char c, __SIZE_TYPE__ n)
+static char	**assemble(char **res, char const *s, char c, size_t n)
 {
-	__SIZE_TYPE__	i;
-	__SIZE_TYPE__	j;
+/* 	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (i < n && *s)
@@ -55,7 +49,7 @@ static char	**assemble(char **res, char const *s, char c, __SIZE_TYPE__ n)
 			s++;
 		while (s[j] != c && s[j])
 			j++;
-		res[i] = (char *)ft_calloc(sizeof(char), (j + 1));
+		res[i] = (char *)malloc(sizeof(char), (j + 1));
 		ft_strlcpy(res[i], s, j + 1);
 		if (!res[i])
 			return (free_all(res, i));
@@ -63,19 +57,52 @@ static char	**assemble(char **res, char const *s, char c, __SIZE_TYPE__ n)
 		s += j;
 	}
 	res[i] = 0;
-	return (res);
+	return (res); */
+
+	while ()
+	{
+		/* code */
+	}
+	return (**str)
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char			**res;
-	__SIZE_TYPE__	n;
+	char	**res;
+	size_t	n;
 
 	if (!s || !*s)
-		return ((char **)ft_calloc(sizeof(char *), 1));
+		return (NULL);
 	n = string_count(s, c);
 	res = ft_calloc(sizeof(char *), (n + 1));
 	if (!res)
-		return (0);
+		return (NULL);
 	return (assemble(res, s, c, n));
 }
+
+/* int main(void)
+{
+    const char *s = "---francinette-no-es---de--fiar-";
+    char **aux = ft_split(s, '-');
+    
+    if (aux)
+    {
+        int i = 0;
+        while (aux[i] != NULL)
+        {
+            printf("%s\n", aux[i]);
+            i++;
+        }
+    }
+    else
+    {
+        printf("Error al dividir la cadena.\n");
+    }
+
+    return 0;
+} */
+
+
+
+char *frase = "holaquehace              hola, que tal?       !    Adios   "
+char c = 32;
