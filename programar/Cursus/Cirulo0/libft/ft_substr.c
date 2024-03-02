@@ -6,30 +6,35 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:43:09 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/02 14:49:02 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/02 15:49:51 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, __SIZE_TYPE__ len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	__SIZE_TYPE__	i;
-	char			*str;
+	size_t	i;
+	char	*str;
 
-	str = malloc(len + 1);
-	i = 0;
-	if (!s || !str)
-	{
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	if (!s || start > ft_strlen(s))
+		return (ft_strdup(""));
+	str =malloc(len + 1);
+	if (!str)
 		return (NULL);
-	}
-	while (len > 0)
+	i = 0;
+	while (i < len)
 	{
-		str[i] = s[start];
+		str[i] = s[start + i];
 		i++;
-		start++;
-		len--;
 	}
 	str[i] = '\0';
 	return (str);
 }
+
+// int main()
+// {
+// 	printf("%d\n", substr("Hola estoy aqui", 5, 4));
+// }
