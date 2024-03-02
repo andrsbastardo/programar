@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:50:23 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 17:23:22 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:56:56 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static size_t	n_digits(int n)
 		len++;
 		cpy = -n;
 	}
-	while (cpy > 0)
+	while (cpy != 0)
 	{
 		cpy /= 10;
 		len++;
@@ -70,11 +70,12 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 		cpy = -n;
 	}
-	len--;
-	while (cpy > 0)
+	/* len--; */
+	while (cpy != 0)
 	{
-		res[len--] = (cpy % 10) + '0';
+		res[len -1] = '0' + (cpy % 10);
 		cpy /= 10;
+		len--;
 	}
 	return (res);
 }
