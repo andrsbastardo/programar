@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:43:09 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 17:04:05 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/02 14:49:02 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, __SIZE_TYPE__ len)
 	i = 0;
 	if (!s || !str)
 	{
-		return (0);
+		return (NULL);
 	}
 	while (len > 0)
 	{
@@ -30,6 +30,6 @@ char	*ft_substr(char const *s, unsigned int start, __SIZE_TYPE__ len)
 		start++;
 		len--;
 	}
-	str[i + 1] = '\0';
+	str[i] = '\0';
 	return (str);
 }

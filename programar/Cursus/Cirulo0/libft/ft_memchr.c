@@ -6,13 +6,13 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:57:18 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 16:55:47 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/02 12:26:32 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memchr(const void *s, int c, __SIZE_TYPE__ n)
+void	*ft_memchr(const void *s, int c, __SIZE_TYPE__ n)
 {
 	__SIZE_TYPE__	i;
 	unsigned char	*str;
