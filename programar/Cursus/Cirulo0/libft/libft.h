@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:23:56 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/24 15:29:52 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/02 11:22:30 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_isprint(int c);
 size_t	ft_strlen(const char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		ft_atoi(const char *str);
+int		ft_atoi(char *str);
 void	*ft_memset(void *dest, int c, size_t count);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);

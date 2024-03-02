@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:28:50 by abastard          #+#    #+#             */
-/*   Updated: 2024/02/28 20:43:24 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/02 11:21:59 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		if (s1[i] > s2[i])
 		{
-			return(1);
+			return (1);
 		}
 		if (s1[i] < s2[i])
 		{
-			return(-1);
+			return (-1);
 		}
 		i++;
 	}
