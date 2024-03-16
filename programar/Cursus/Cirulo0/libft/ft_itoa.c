@@ -6,17 +6,14 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:50:23 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/16 11:18:54 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 12:00:23 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> // For strtol
-
-*/
 
 static char	*excepts(int n)
 {
@@ -61,7 +58,7 @@ char	*ft_itoa(int n)
 		return (excepts(n));
 	cpy = n;
 	len = n_digits(n);
-	res = ft_calloc(sizeof(char), len + 1);
+	res = ft_calloc(sizeof(char), len);
 	if (!res)
 		return (NULL);
 	if (n < 0)
@@ -69,6 +66,7 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 		cpy = -n;
 	}
+	res[len] = '\0';
 	while (cpy != 0)
 	{
 		res[len - 1] = '0' + (cpy % 10);
@@ -77,3 +75,14 @@ char	*ft_itoa(int n)
 	}
 	return (res);
 }
+
+/*
+int	main(void)
+{
+	char	*res;
+
+	res = ft_itoa(9);
+	printf("%s", res);
+	free(res);
+}
+*/
