@@ -6,98 +6,76 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:18:18 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/16 14:06:32 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 17:13:12 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	first(char const *s, char c)
+static char	**free_willy(char **res, size_t i)
 {
-	size_t	i;
-
-	i = 0;
-	if (s[i] == c)
-		i++;
-	return (i);
+	while (--i)
+		free(res[i]);
+	free(res);
+	return (NULL);
 }
 
-static char	**alocator(char const *s, char c)
+static size_t	string_counter(char const *s, char c)
 {
-	size_t	end;
+	size_t	string;
 	size_t	counter;
-	size_t	start;
-	char	**str;
 	size_t	i;
 
-	end = 0;
-	start = 0;
+	string = 0;
 	counter = 0;
-	while (s[end] != '\0')
+	while (s[i] != '\0')
 	{
-		if ((s[end] == c || s[end + 1] == '\0') && s[end - 1] != c)
+		if (s[i] == c)
+			counter = 0;
+		else if (counter == 0)
 		{
-			i = 0;
-			str[counter] = malloc(end - start);
-			if (!str[counter])
-				return (NULL);
-			while (i < (end - start))
-			{
-				str[counter][i] = s[start];
-				i++;
-				start++;
-			}
-			str[counter][i + 1] = '\0';
-			counter++;
-			end++;
-			start = end;
+			string++;
+			counter = 1;
 		}
-		else if (s[end] == c && s[end - 1] == c)
-		{
-			end++;
-			start = end;
-		}
-		else
-			end++;
+		i++;
 	}
-	return (str);
+	return (string);
 }
-/*
+
+static char	**coupler(char **res, char const *s, char c, size_t string)
+{
+	size_t	index;
+	size_t	counter;
+
+	index = 0;
+	while (index < string && *s)
+	{
+		counter = 0;
+		while (*s == c)
+			s++;
+		while (s[counter] != c && s[counter])
+			counter++;
+		res[index] = (char *)ft_calloc(sizeof(char), (counter + 1));
+		ft_strlcpy(res[index], s, counter + 1);
+		if (!res[index])
+			return (free_willy(res, index));
+		index++;
+		s += counter;
+	}
+	res[index] = 0;
+	return (res);
+}
+
 char	**ft_split(char const *s, char c)
 {
-}
-*/
+	char	**res;
+	size_t	string;
 
-static char	**alocator2(char const *s, char c)
-{
-	size_t	end;
-	size_t	counter;
-	size_t	start;
-	char	**str;
-	size_t	i;
-
-	end = 0;
-	start = 0;
-	counter = 0;
-	while (s[end] != '\0')
-	{
-		if (s[end] =! c && (s[end + 1] ==c || s[end +1] == '\0'))
-		{
-			/* code */
-		}
-		
-	}
-}
-
-
-int	main(void)
-{
-	char *str = "aaaholoaaasia";
-	char **str2 = alocator(str, 'a');
-	int i = 0;
-	while (i < 2)
-	{
-		printf("%s", str2[i]);
-		i++;
-	}
+	if (!s || !*s)
+		return ((char **)ft_calloc(sizeof(char *), 1));
+	string = string_counter(s, c);
+	res = ft_calloc(sizeof(char *), (string + 1));
+	if (!res)
+		return (NULL);
+	return (coupler(res, s, c, string));
 }
