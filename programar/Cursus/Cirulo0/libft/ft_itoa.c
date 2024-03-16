@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:50:23 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/16 12:00:23 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 12:50:55 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static char	*excepts(int n)
 	return (NULL);
 }
 
-static size_t	n_digits(int n)
+static int	n_digits(int n)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
 	if (n == 0)
@@ -51,14 +51,14 @@ static size_t	n_digits(int n)
 char	*ft_itoa(int n)
 {
 	char	*res;
-	size_t	len;
+	int		len;
 	size_t	cpy;
 
 	if (n == 0 || n == INT_MIN || n == INT_MAX)
 		return (excepts(n));
 	cpy = n;
 	len = n_digits(n);
-	res = ft_calloc(sizeof(char), len);
+	res = ft_calloc(sizeof(char), len + 1);
 	if (!res)
 		return (NULL);
 	if (n < 0)
@@ -76,13 +76,10 @@ char	*ft_itoa(int n)
 	return (res);
 }
 
-/*
+
+
 int	main(void)
 {
-	char	*res;
-
-	res = ft_itoa(9);
-	printf("%s", res);
-	free(res);
+	atexit(runleaks);
+	ft_itoa(-5859);
 }
-*/
