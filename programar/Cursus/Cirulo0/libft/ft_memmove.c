@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:26:22 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/02 13:20:09 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 11:16:12 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n--)
 			dest2[n] = src2[n];
-    }
+	}
 	else
 	{
 		i = 0;
 		while (i < n)
 		{
 			dest2[i] = src2[i];
-            i++;
+			i++;
 		}
 	}
 	return (dest);

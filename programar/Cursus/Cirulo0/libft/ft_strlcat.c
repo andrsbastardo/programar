@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 10:45:14 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/02 12:22:57 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 11:16:38 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 // {
 // 	char	*dst = "pqrs";
 // 	char *src = "abcdefghi";
-	
 // 	ft_strlcat(dst, src, 13);
 // }
 /*

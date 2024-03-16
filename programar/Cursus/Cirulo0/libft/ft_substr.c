@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:43:09 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/02 15:49:51 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 11:17:49 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s) - start;
 	if (!s || start > ft_strlen(s))
 		return (ft_strdup(""));
-	str =malloc(len + 1);
+	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
 	i = 0;

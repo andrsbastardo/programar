@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:29:33 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/02 17:36:12 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 11:17:39 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = malloc(is_in_r - is_in_s + 1);
 	if (!str)
 		return (NULL);
-
 	while (s1[is_in_s] != '\0' && (is_in_s + i) < is_in_r)
 	{
 		str[i] = s1[is_in_s + i];

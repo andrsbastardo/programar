@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:50:23 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/02 18:56:56 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 11:18:54 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> // For strtol
+
 */
 
 static char	*excepts(int n)
@@ -31,10 +32,8 @@ static char	*excepts(int n)
 static size_t	n_digits(int n)
 {
 	size_t	len;
-	int		cpy;
 
 	len = 0;
-	cpy = n;
 	if (n == 0)
 		return (1);
 	if (n == INT_MIN || n == INT_MAX)
@@ -42,11 +41,11 @@ static size_t	n_digits(int n)
 	if (n < 0)
 	{
 		len++;
-		cpy = -n;
+		n = -n;
 	}
-	while (cpy != 0)
+	while (n != 0)
 	{
-		cpy /= 10;
+		n = n / 10;
 		len++;
 	}
 	return (len);
@@ -70,10 +69,9 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 		cpy = -n;
 	}
-	/* len--; */
 	while (cpy != 0)
 	{
-		res[len -1] = '0' + (cpy % 10);
+		res[len - 1] = '0' + (cpy % 10);
 		cpy /= 10;
 		len--;
 	}
