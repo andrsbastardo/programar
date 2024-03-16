@@ -6,7 +6,7 @@
 /*   By: abastard <abastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:50:23 by abastard          #+#    #+#             */
-/*   Updated: 2024/03/16 12:50:55 by abastard         ###   ########.fr       */
+/*   Updated: 2024/03/16 13:09:47 by abastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,4 @@ char	*ft_itoa(int n)
 		len--;
 	}
 	return (res);
-}
-
-
-
-int	main(void)
-{
-	atexit(runleaks);
-	ft_itoa(-5859);
 }
